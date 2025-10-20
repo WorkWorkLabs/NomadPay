@@ -65,44 +65,46 @@ Digital nomads often struggle with:
 
 ## 🛠 Product Flow (Mermaid Diagram)
 
-    flowchart TD
-    A[User deposits USDC/USDT via App] --> RiskProfile[Risk Assessment]
-    
-    RiskProfile --> Strategy[Fund Allocation Strategy]
-    A --> Buffer[Buffer Layer for Instant Payments<br>Hold 5-20% of Funds]
-    A --> RiskDisclosure[Risk Disclosure]
-    
-    Buffer --> D[Register/Generate Fiat24 U-Card NFT Account + Visa Virtual Card]
-    
-    %% Three parallel strategies
-    Strategy --> Conservative[Conservative Strategy<br>Staking & Lending DeFi<br>Aave/Compound<br>APY 3-8%]
-    Strategy --> Balanced[Balanced Strategy<br>Yield Farming<br>Yearn and similar protocols<br>APY 6-12%]
-    Strategy --> Aggressive[Aggressive Strategy<br>Major Cryptocurrencies<br>BTC/ETH and other majors<br>Variable returns, higher risk]
-    
-    %% Risk disclosure connects to all strategies
-    RiskDisclosure -.-> Conservative
-    RiskDisclosure -.-> Balanced
-    RiskDisclosure -.-> Aggressive
-    
-    %% Strategy results converge
-    Conservative --> Yield[Yield Accumulation]
-    Balanced --> Yield
-    Aggressive --> Yield
-    
-    %% Payment process
-    D --> PaymentDecision{Payment Trigger}
-    PaymentDecision -->|Small Payment ≤50 USD| SmallPayment[Direct Payment from Buffer<br>Instant Confirmation]
-    PaymentDecision -->|Large Payment >50 USD| LargePayment[Automatically Withdraw from DeFi Pool]
-    
-    SmallPayment --> Spend[Offline Payments<br>AEON Pay QR Code or U-Card/ATM Instant Fiat Spending]
-    LargePayment --> Spend
-    
-    Spend --> Rebalance[Rebalance Funds<br>Auto-replenish Buffer Layer when Funds Run Low]
-    Rebalance --> Buffer
-    
-    %% AI monitoring and strategy updates
-    Yield --> AIMonitor[AI Monitoring APY Fluctuations and Risks<br>Suggest Switching Pools or Adjusting Strategy]
-    AIMonitor --> StrategyUpdate[Strategy Update Suggestion<br>Execute after User Confirmation]
-    StrategyUpdate --> Conservative
-    StrategyUpdate --> Balanced
-    StrategyUpdate --> Aggressive
+```mermaid
+flowchart TD
+A[User deposits USDC/USDT via App] --> RiskProfile[Risk Assessment]
+
+RiskProfile --> Strategy[Fund Allocation Strategy]
+A --> Buffer[Buffer Layer for Instant Payments<br/>Hold 5-20% of Funds]
+A --> RiskDisclosure[Risk Disclosure]
+
+Buffer --> D[Register/Generate Fiat24 U-Card NFT Account + Visa Virtual Card]
+
+%% Three parallel strategies
+Strategy --> Conservative[Conservative Strategy<br/>Staking & Lending DeFi<br/>Aave/Compound<br/>APY 3-8%]
+Strategy --> Balanced[Balanced Strategy<br/>Yield Farming<br/>Yearn and similar protocols<br/>APY 6-12%]
+Strategy --> Aggressive[Aggressive Strategy<br/>Major Cryptocurrencies<br/>BTC/ETH and other majors<br/>Variable returns, higher risk]
+
+%% Risk disclosure connects to all strategies
+RiskDisclosure -.-> Conservative
+RiskDisclosure -.-> Balanced
+RiskDisclosure -.-> Aggressive
+
+%% Strategy results converge
+Conservative --> Yield[Yield Accumulation]
+Balanced --> Yield
+Aggressive --> Yield
+
+%% Payment process
+D --> PaymentDecision{Payment Trigger}
+PaymentDecision -->|Small Payment ≤50 USD| SmallPayment[Direct Payment from Buffer<br/>Instant Confirmation]
+PaymentDecision -->|Large Payment >50 USD| LargePayment[Automatically Withdraw from DeFi Pool]
+
+SmallPayment --> Spend[Offline Payments<br/>AEON Pay QR Code or U-Card/ATM Instant Fiat Spending]
+LargePayment --> Spend
+
+Spend --> Rebalance[Rebalance Funds<br/>Auto-replenish Buffer Layer when Funds Run Low]
+Rebalance --> Buffer
+
+%% AI monitoring and strategy updates
+Yield --> AIMonitor[AI Monitoring APY Fluctuations and Risks<br/>Suggest Switching Pools or Adjusting Strategy]
+AIMonitor --> StrategyUpdate[Strategy Update Suggestion<br/>Execute after User Confirmation]
+StrategyUpdate --> Conservative
+StrategyUpdate --> Balanced
+StrategyUpdate --> Aggressive
+```
