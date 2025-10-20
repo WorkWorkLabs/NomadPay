@@ -75,9 +75,9 @@ Digital nomads often struggle with:
     Buffer --> D[Register/Generate Fiat24 U-Card NFT Account + Visa Virtual Card]
     
     %% Three parallel strategies
-    Strategy --> Conservative[Conservative Strategy<br>Aave/Compound<br>Low-risk Stablecoin Pool<br>APY 3-8%]
-    Strategy --> Balanced[Balanced Strategy<br>Yearn<br>Medium-risk Strategy Pool<br>APY 6-12%]
-    Strategy --> Aggressive[Aggressive Strategy<br>AI Optimized High Yield Pool<br>High-risk Strategy<br>APY 8-20%+]
+    Strategy --> Conservative[Conservative Strategy<br>Staking & Lending DeFi<br>Aave/Compound<br>APY 3-8%]
+    Strategy --> Balanced[Balanced Strategy<br>Yield Farming<br>Yearn and similar protocols<br>APY 6-12%]
+    Strategy --> Aggressive[Aggressive Strategy<br>Major Cryptocurrencies<br>BTC/ETH and other majors<br>Variable returns, higher risk]
     
     %% Risk disclosure connects to all strategies
     RiskDisclosure -.-> Conservative
@@ -106,4 +106,3 @@ Digital nomads often struggle with:
     StrategyUpdate --> Conservative
     StrategyUpdate --> Balanced
     StrategyUpdate --> Aggressive
-
