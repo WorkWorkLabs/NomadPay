@@ -26,10 +26,10 @@ let connectedAddress = null;
 
 // 总资产与单位切换状态
 const state = {
-  unit: 'CNY',
-  balances: { eth: 0, usdc: 0, usdt: 0 },
+  unit: 'USD',
+  balances: { eth: 0, usdc: 2000, usdt: 0 },
   prices: { USD_CNY: 7.10, ETH_USD: 3500, USDT_USD: 1 }, // 演示用静态价格
-  portfolio: { yieldUSD: 2.53 } // Yield farm示例金额（USD）
+  portfolio: { yieldUSD: 0 }
 };
 
 async function initWallet() {
@@ -280,8 +280,14 @@ function initInvestFlow() {
   document.getElementById('btnBackHome').addEventListener('click', () => show('home'));
 }
 
+function renderWalletFallback() {
+  const ethEl = document.getElementById('bal-eth'); if (ethEl) ethEl.textContent = 'ETH: 0.0000';
+  const usdcEl = document.getElementById('bal-usdc'); if (usdcEl) usdcEl.textContent = 'USDC: 2000.0000';
+  const usdtEl = document.getElementById('bal-usdt'); if (usdtEl) usdtEl.textContent = 'USDT: 0.0000';
+}
 (function init() {
   initWallet();
+  renderWalletFallback();
   initPortfolioUI();
   renderPortfolio();
   initPayments();
