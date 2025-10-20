@@ -64,7 +64,8 @@ Digital nomads often struggle with:
 ---
 
 ## 🛠 Product Flow (Mermaid Diagram)
-flowchart TD
+
+    flowchart TD
     A[User deposits USDC/USDT via App] --> RiskProfile[Risk Assessment]
     
     RiskProfile --> Strategy[Fund Allocation Strategy]
